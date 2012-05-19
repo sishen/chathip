@@ -17,7 +17,7 @@ gem "rspec-rails", ">= 2.10.1", :group => [:development, :test]
 gem "factory_girl_rails", ">= 3.3.0", :group => [:development, :test]
 gem "email_spec", ">= 1.2.1", :group => :test
 gem "simple_form"
-gem "guard", ">= 0.6.2", :group => :development  
+gem "guard", ">= 0.6.2", :group => :development
 case HOST_OS
   when /darwin/i
     gem 'rb-fsevent', :group => :development
@@ -33,3 +33,12 @@ end
 gem "guard-bundler", ">= 0.1.3", :group => :development
 gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
+
+gem "annotate", "~> 2.4.1.beta1"
+
+group :development, :test do
+  gem "puma"
+  gem "foreman"
+  gem "guard-annotate"
+  gem "shoulda-matchers"
+end

@@ -2,9 +2,7 @@
 
 FactoryGirl.define do
   factory :user do
-    provider "MyString"
-    uid "MyString"
-    name "MyString"
-    email "MyString"
+    sequence(:github_uid)
+    name { |n| "User #{User.count}" }
   end
 end
