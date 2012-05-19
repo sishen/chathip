@@ -42,4 +42,5 @@ group :development, :test do
   gem "foreman"
   gem "guard-annotate"
   gem "shoulda-matchers"
+  gem "webrat"
 end

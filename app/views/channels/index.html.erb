@@ -1,0 +1,15 @@
+<h5>Channel List</h5>
+<div class="row">
+  <ul>
+    <%- @channels.each do |channel| %>
+      <li class="channel"><a href="<%= channel_path(channel.uuid) %> "><%= channel.name %></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<h5>Join New Channel</h5>
+
+<%= simple_form_for @channel, html: { class: 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Join" %>
+<% end %>

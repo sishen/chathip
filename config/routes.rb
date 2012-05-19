@@ -1,5 +1,8 @@
 Chathip::Application.routes.draw do
-  resources :users, :only => [ :show, :edit, :update ]
+  root to: "channels#index", constraints: User
+  root to: "sessions#new", constraints: lambda { |request| !User.matches?(request) }
+
+  resources :channels, only: [:index, :show, :create]
 
   match '/auth/:provider/callback' => 'sessions#create'
 
@@ -8,7 +11,4 @@ Chathip::Application.routes.draw do
   match '/signout' => 'sessions#destroy', :as => :signout
 
   match '/auth/failure' => 'sessions#failure'
-
-  root :to => "home#index"
-
 end
