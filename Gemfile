@@ -35,6 +35,7 @@ gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 
 gem "annotate", "~> 2.4.1.beta1"
+gem "uuid"
 
 group :development, :test do
   gem "puma"
